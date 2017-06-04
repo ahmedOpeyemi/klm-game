@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.game-board {
+    background-color: white;
+    width: 40em
+}
+
+.game-board .game-board-row {
+    border: 2px solid black;
+    height: 10em;
+}
+
+.game-board .game-board-row .game-board-col {
+    border: 2px solid black;
+    font-size: 5em;
+    width: 25%;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.player-one-color {
+    color: green;
+}
+
+.player-two-color {
+    color: red;
+}
+
