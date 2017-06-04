@@ -61,7 +61,7 @@ function displayAlphabetOnBox(box, alphabet) {
         activePlayer = activePlayer === PLAYER_TILES.PLAYER_ONE
             ? PLAYER_TILES.PLAYER_TWO
             : PLAYER_TILES.PLAYER_ONE
-        clearBoxOnHold()
+        clearBoxOnHoldClassName()
         showInstruction("Player "+ activePlayer.code +", please click on a tile")
     }
 }
@@ -76,11 +76,11 @@ function holdBox(className) {
             currentlyHeldBox.className = currentlyHeldBox.className.replace(PLAYER_TILES.PLAYER_ONE.class, "").trim()
             currentlyHeldBox.className = currentlyHeldBox.className.replace(PLAYER_TILES.PLAYER_TWO.class, "").trim()
         }
-        clearBoxOnHold()
-        var playerClassName = activePlayer.class
+        clearBoxOnHoldClassName()
+        var activePlayerClassName = activePlayer.class
         var boxOnHold = box
         boxOnHold.innerText = "?"
-        boxOnHold.className = boxOnHold.className.concat(" " + playerClassName)
+        boxOnHold.className = boxOnHold.className.concat(" " + activePlayerClassName)
         boxOnHoldClassName = className
         showInstruction("Player "+ activePlayer.code + ", please enter your alphabet")
     }
@@ -92,17 +92,17 @@ function getBoxOnHold() {
     return getBox(boxOnHoldClassName)
 }
 
-function clearBoxOnHold() {
+function clearBoxOnHoldClassName() {
     // clear previous box on hold if any
     boxOnHoldClassName = ""
 }
 
 function onKeyPress(event) {
-    var boxOnHold = getBoxOnHold()
-    if (!boxOnHold) {
+    if (!boxOnHoldClassName) {
         showInstruction("Player "+ activePlayer.code +", please click on a tile")
         return
     }
+    var boxOnHold = getBoxOnHold()
     displayAlphabetOnBox(boxOnHold, event.key.toUpperCase())
 }
 
