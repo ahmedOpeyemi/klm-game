@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+        <p>
+            <input type="radio" value="1" name="playerMode" onchange="switchPlayerMode(value)" />Single Player Mode
+            <input type="radio" value="2" name="playerMode" onchange="switchPlayerMode(value)" checked />Two Player Mode
+        </p>
+        <p>
+            <span class="player-one-color">Player One: </span>
+            <span class="player-one-score">0</span>
+            <span class="player-two-color"> Player Two: </span>
+            <span class="player-two-score">0</span></p>
+        </div>
+        <button onclick="resetBoard()">Reset</button>
+        <button onclick="conceed()">Conceed</button>
+        <table class="game-board">
+            <p>Instruction: <span class="instruction"></span></p>
+            <tr class="row1 game-board-row">
+                <td class="col11 game-board-col"></td>
+                <td class="col12 game-board-col"></td>
+                <td class="col13 game-board-col"></td>
+                <td class="col14 game-board-col"></td>
+            </tr>
+            <tr class="row2 game-board-row">
+                <td class="col21 game-board-col"></td>
+                <td class="col22 game-board-col"></td>
+                <td class="col23 game-board-col"></td>
+                <td class="col24 game-board-col"></td>
+            </tr>
+            <tr class="row3 game-board-row">
+                <td class="col31 game-board-col"></td>
+                <td class="col32 game-board-col"></td>
+                <td class="col33 game-board-col"></td>
+                <td class="col34 game-board-col"></td>
+            </tr>
+            <tr class="row4 game-board-row">
+                <td class="col41 game-board-col"></td>
+                <td class="col42 game-board-col"></td>
+                <td class="col43 game-board-col"></td>
+                <td class="col44 game-board-col"></td>
+            </tr>
+        </table>
+        <script src="index.js"></script>
+    </body>
+</html>
